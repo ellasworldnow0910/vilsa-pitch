@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiativbewerbung & Pitch — Ella Brunschön | VILSA-BRUNNEN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0b192c;
+            --bg-card: #1e3e62;
+            --bg-card-hover: #264e7a;
+            --petrol-dark: #004d61;
+            --petrol-main: #008080;
+            --petrol-light: #00a896;
+            --petrol-accent: #02c39a;
+            --cyan-accent: #00f5d4;
+            --text-white: #ffffff;
+            --text-muted: #b0c4de;
+            --border-color: rgba(0, 168, 150, 0.25);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 50% 0%, #003547 0%, #0b192c 70%);
+            color: var(--text-white);
+            line-height: 1.6;
+            padding-bottom: 60px;
+            min-height: 100vh;
+        }
+
+        /* Header Navigation / Banner */
+        header {
+            background: rgba(11, 25, 44, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-logo span {
+            color: var(--cyan-accent);
+        }
+
+        .badge-pitch {
+            background: linear-gradient(135deg, var(--petrol-main), var(--petrol-accent));
+            color: #0b192c;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section (Folie 1 & 2) */
+        .hero-section {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
+            color: var(--cyan-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--petrol-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .meta-card {
+            background: rgba(30, 62, 98, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px 25px;
+            backdrop-filter: blur(8px);
+            text-align: left;
+            min-width: 280px;
+        }
+
+        .meta-card h4 {
+            color: var(--petrol-accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .meta-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .meta-card strong {
+            color: var(--text-white);
+        }
+
+        /* Statement Card (Folie 2) */
+        .quote-card {
+            background: linear-gradient(135deg, rgba(0, 128, 128, 0.2), rgba(2, 195, 154, 0.1));
+            border-left: 5px solid var(--cyan-accent);
+            border-radius: 0 16px 16px 0;
+            padding: 30px 40px;
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .quote-card blockquote {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            font-style: italic;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .quote-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Section Header */
+        .section-header {
+            margin: 60px 0 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-number {
+            background: var(--petrol-accent);
+            color: #0b192c;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        /* Grid Layout (Folie 3 & 4 - 4 Pillars) */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pillar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--petrol-accent);
+            background: var(--bg-card-hover);
+        }
+
+        .pillar-badge {
+            color: var(--cyan-accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .pillar-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 18px;
+        }
+
+        .pillar-list {
+            list-style: none;
+        }
+
+        .pillar-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        .pillar-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--petrol-accent);
+            font-size: 0.9rem;
+        }
+
+        .pillar-list strong {
+            color: var(--text-white);
+        }
+
+        /* Table Section (Folie 5 - Alignment) */
+        .table-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            margin-top: 20px;
+        }
+
+        .table-intro {
+            padding: 20px 25px;
+            background: rgba(0, 77, 97, 0.4);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(11, 25, 44, 0.6);
+            color: var(--cyan-accent);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(0, 168, 150, 0.15);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(0, 168, 150, 0.08);
+        }
+
+        td strong {
+            color: var(--text-white);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .share-tag {
+            display: inline-block;
+            background: rgba(2, 195, 154, 0.15);
+            color: var(--petrol-accent);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid rgba(2, 195, 154, 0.3);
+        }
+
+        /* Benefits Cards Section (Folie 6 - Vertical Centered Clean Benefits) */
+        .benefits-card-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 168, 150, 0.15);
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .benefit-num {
+            background: linear-gradient(135deg, var(--petrol-main), var(--petrol-light));
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .benefit-content h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--cyan-accent);
+            margin-bottom: 4px;
+        }
+
+        .benefit-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        /* Call To Action Banner */
+        .cta-banner {
+            margin-top: 40px;
+            background: linear-gradient(135deg, #003547 0%, #004d61 100%);
+            border: 1px solid var(--petrol-accent);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--petrol-main), var(--cyan-accent));
+        }
+
+        .cta-quote {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-white);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .cta-sender {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: var(--cyan-accent);
+            letter-spacing: 1.5px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cyan-accent), var(--petrol-accent));
+            color: #0b192c;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 16px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(0, 245, 212, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 245, 212, 0.5);
+            background: linear-gradient(135deg, #ffffff, var(--cyan-accent));
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        footer a {
+            color: var(--petrol-accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-logo">
+            ELLA BRUNSCHÖN <span>/ VILSA PITCH</span>
+        </div>
+        <div class="badge-pitch">Strategische Prozess-Automation</div>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-subtitle">Initiativbewerbung & Pitch Deck</div>
+            <h1 class="hero-title">Strategische Prozess-Automatisierung<br>& Key Account Management</h1>
+            <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin: 0 auto;">
+                Fokus: Sales Operations, Datenschnittstellen & Prozessoptimierung bei VILSA-BRUNNEN
+            </p>
+
+            <div class="hero-meta">
+                <div class="meta-card">
+                    <h4>Empfängerin</h4>
+                    <p><strong>VILSA-BRUNNEN</strong> Otto Rodekohr GmbH & Co. KG</p>
+                    <p>Ansprechpartner: HR & Geschäftsführung</p>
+                </div>
+                <div class="meta-card">
+                    <h4>Absenderin / Profil</h4>
+                    <p><strong>Ella Brunschön</strong> | Tech- & Sales-Pionierin</p>
+                    <p>Marienstraße 37 | 27305 Bruchhausen-Vilsen</p>
+                    <p>Tel. <a href="tel:01705996814" style="color: var(--cyan-accent); text-decoration: none;">0170/5996814</a> | E-Mail: <a href="mailto:karmaaudio@gmx.de" style="color: var(--cyan-accent); text-decoration: none; font-weight: 600;">karmaaudio@gmx.de</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statement Quote -->
+        <div class="quote-card">
+            <blockquote>
+                „Klassische Bewerbungsmuster spiegeln weder komplexe Systemrealitäten noch das wahre Potenzial eines Menschen wider. Ich trete an als Symbiose aus verhandlungsstarker Handels-DNA, tiefem Systemdenken und kompromissloser Umsetzungsstärke.“
+            </blockquote>
+            <p>
+                Ich bewerbe mich bei VILSA nicht über Schema F, sondern mit einer Qualifikationsmatrix, die auf dem Markt absolut einzigartig ist: Ich bin eine ADHS-betroffene Frau mit transidentem Hintergrund, die jahrelange High-Level-Erfahrung im Key Account Management (LEH, Großhandel & Spezialmärkte) mit der Fähigkeit verbindet, im Hintergrund IT-Prozesse, Datenschnittstellen und Automatisierungen eigenhändig aufzubauen.<br><br>
+                Dass mein Gehirn neurodivergent verschaltet ist, verstand ich früher als Hürde – heute ist es meine stärkste Waffe. Der typische ADHS-Hyperfokus bedeutet bei mir: Ich analysiere komplexe Abläufe in Sekunden, erkenne Schnittstellen-Nadelöhre, die anderen entgehen, und gebe keine Ruhe, bis ein System lückenlos, automatisiert und perfekt strukturiert läuft.
+            </p>
+        </div>
+
+        <!-- Section 1: 4 Pillar Matrix -->
+        <div class="section-header">
+            <div class="section-number">1</div>
+            <h2 class="section-title">Meine Säulen der Wertschöpfung für VILSA (4-Pillar Matrix)</h2>
+        </div>
+
+        <div class="pillars-grid">
+            <!-- Pillar A -->
+            <div class="pillar-card">
+                <span class="pillar-badge">Säule A</span>
+                <h3 class="pillar-title">Key Account & Handels-DNA — Vertrieb auf Entscheiderebene</h3>
+                <ul class="pillar-list">
+                    <li><strong>LEH-Praxis:</strong> Betreuung von K+K Klaas & Kock sowie selbstständigen/freien REWE-Märkten und Kontakte zur Führungsebene der Bünting-Gruppe (Combi, famila). Tiefe Marktkenntnis bezüglich Zentrallägern, Konditionssystemen, Filialnetzen und LEH-Prozessen.</li>
+                    <li><strong>C-Level & Großkunden:</strong> Akquise/Vollbelieferung Merkur Casino Gruppe (E-Zigaretten), Betreuung Niemeyer Zigarren & Kontakte zu Entscheidern im Großhandel (Moosmayr, E-Zigaretten-Importeure).</li>
+                </ul>
+            </div>
+
+            <!-- Pillar B -->
+            <div class="pillar-card">
+                <span class="pillar-badge">Säule B</span>
+                <h3 class="pillar-title">Software-Agnostische Engine — Troubleshooting</h3>
+                <ul class="pillar-list">
+                    <li><strong>100% Software-agnostisch:</strong> Ob SAP, Microsoft Dynamics/Navision, JTL, Shopware oder hauseigene Speziallösungen: Dank neurodivergenter Systemlogik Einarbeitung in jede Software in kürzester Zeit.</li>
+                    <li><strong>Pragmatisches Troubleshooting:</strong> Anbindung eines verbauten Shopware-Systems an JTL-Wawi (nach Scheitern anderer Dienstleister). Ich sehe das Logik-Muster hinter jeder Software.</li>
+                    <li><strong>Workflow-Code & Automation:</strong> Erstellung von Batch-Skripten, Automation Workshop & Windows-Aufgabenplaner.</li>
+                </ul>
+            </div>
+
+            <!-- Pillar C -->
+            <div class="pillar-card">
+                <span class="pillar-badge">Säule C</span>
+                <h3 class="pillar-title">Audio-Engineering — Signalfluss & Data Cleaning</h3>
+                <ul class="pillar-list">
+                    <li><strong>Live-Sound, Produktion & Film-Ton:</strong> Sound-Engineering für Legenden wie Ton Steine Scherben, Katja Ebstein, Selig. Boom Operator & Post-Produktion/Mixdown bei Kurzfilmen. Multiinstrumentalistin.</li>
+                    <li><strong>Restaurierung & Signal-Noise-Reduction:</strong> Spektrales Entfernen ungewollter Hintergrundgeräusche – die direkte Analogie zu mathematischem Data Cleaning & Filtern fehlerhafter Datenströme (Input Processing Clean Output).</li>
+                </ul>
+            </div>
+
+            <!-- Pillar D -->
+            <div class="pillar-card">
+                <span class="pillar-badge">Säule D</span>
+                <h3 class="pillar-title">KI-Integration & Ausdauer — Macher-Mentalität</h3>
+                <ul class="pillar-list">
+                    <li><strong>Frameworks & KI:</strong> Aktive Entwicklung & Nutzung KI-gestützter Automatisierungs-Frameworks (mit Tech-Partnern) zur Zukunftsfähigkeit von Geschäftsprozessen.</li>
+                    <li><strong>Extreme Fokus- & Balance-Skills:</strong> Ob Einradfahren (inkl. Treppen-Hüpfen & Wettkämpfen), 10-km-Läufe oder Hafen-Container-Beladen auf Tour – extreme Nehmerqualitäten & Durchhaltevermögen unter Belastung.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 2: Modular Alignment Table -->
+        <div class="section-header">
+            <div class="section-number">2</div>
+            <h2 class="section-title">Modularer Ansatz: Flexibles Aufgaben-Alignment</h2>
+        </div>
+
+        <div class="table-wrapper">
+            <div class="table-intro">
+                <strong>Hinweis:</strong> Das gezeigte Modell verdeutlicht beispielhaft eine Aufteilung. Das Portfolio ist modular aufgebaut und kann je nach akutem Bedarf bei VILSA in den Anteilen verschoben oder um weitere Schnittstellenfelder ergänzt werden.
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aufgabenfeld</th>
+                        <th>Verteilung</th>
+                        <th>Möglicher VILSA-Mehrwert</th>
+                        <th>Eingesetzte Tools / Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Sales Operations & EDI/Schnittstellen</strong>
+                        </td>
+                        <td><span class="share-tag">ca. 40%</span></td>
+                        <td>Automatisierung von Bestell- & Stammdatenflüssen zwischen Handels-Partnern (LEH/Großhandel) und VILSA. Rettung komplexer Legacy-Systeme.</td>
+                        <td>JTL, Shopware, EDI-Logik, Batch-Skripte, Aufgabenplaner</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Process Automation Specialist</strong>
+                        </td>
+                        <td><span class="share-tag">ca. 30%</span></td>
+                        <td>Analyse manueller Abteilungsabläufe, Eliminierung von Zettelwirtschaft, Bau von Skripten & KI-Workflows.</td>
+                        <td>Automation Workshop, Python/Batch, KI-Frameworks</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Key Account Support & Consulting</strong>
+                        </td>
+                        <td><span class="share-tag">ca. 30%</span></td>
+                        <td>Technische & strategische Begleitung von Großkunden-Onboardings, Verhandlungsunterstützung auf Entscheiderebene.</td>
+                        <td>C-Level-Erfahrung, LEH-Know-how, Verhandlungsstärke</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Weitere Einsatzfelder</strong>
+                        </td>
+                        <td><span class="share-tag" style="background: rgba(255,255,255,0.05); color: var(--text-muted); border-color: rgba(255,255,255,0.1);">Erweiterbar</span></td>
+                        <td>Anpassbar an projektspezifische VILSA-Bedarfe (z.B. Data-Cleaning, IT-Schnittstellen-Audit, Schulungen).</td>
+                        <td>System-Analyse, Custom-Workflows, Schnittstellen-Design</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 3: Benefits -->
+        <div class="section-header">
+            <div class="section-number">3</div>
+            <h2 class="section-title">Warum diese Kombination für VILSA ein Gewinn ist (Benefits)</h2>
+        </div>
+
+        <div class="benefits-card-container">
+            <div class="benefit-item">
+                <div class="benefit-num">1</div>
+                <div class="benefit-content">
+                    <h4>Maximale Lern- & Einarbeitungsgeschwindigkeit</h4>
+                    <p>Ich passe mich Ihren bestehenden Systemen an, nicht umgekehrt. Neue Software schreckt mich nicht ab, sondern weckt meinen Hyperfokus.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">2</div>
+                <div class="benefit-content">
+                    <h4>Pragmatisches Troubleshooting</h4>
+                    <p>Ich schrecke nicht vor „unlösbaren“ IT-Problemen zurück, sondern zerlege sie systemisch, bis Daten wieder sauber fließen.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">3</div>
+                <div class="benefit-content">
+                    <h4>Kein Silodenken</h4>
+                    <p>Ich verstehe die Sprache des Vertriebs und der IT gleichermaßen. Ich schließe die teure Lücke zwischen Fachabteilung und Systemadministration.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">4</div>
+                <div class="benefit-content">
+                    <h4>Disziplin & Koordination</h4>
+                    <p>Aus der Musik (Multitasking & Taktgefühl an Schlagzeug/Gitarre) und dem Extremsport bringe ich absolute Körper- und Geistbeherrschung mit.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">5</div>
+                <div class="benefit-content">
+                    <h4>Authentizität & Haltung</h4>
+                    <p>Transparenz, Rückgrat und ehrliche Kommunikation zeichnen mich aus. Sie gewinnen eine absolut loyal agierende, hochmotivierte Innovatorin.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call To Action -->
+        <div class="cta-banner">
+            <div class="cta-quote">
+                „Ich lade Sie ein zu einem Gespräch auf Augenhöhe. Lassen Sie uns direkt über konkrete Nadelöhre bei VILSA sprechen – und darüber, wie ich diese ab Tag 1 automatisiere.“
+            </div>
+            <div style="margin: 30px 0;">
+                <a href="mailto:karmaaudio@gmx.de?subject=VILSA%20Pitch%20-%20Gespr%C3%A4chsanfrage%20Ella%20Brunsch%C3%B6n" class="cta-button">
+                    ✉ JETZT KONTAKT AUFNEHMEN / GESPRÄCH VEREINBAREN
+                </a>
+            </div>
+            <div class="cta-sender">
+                MIT FREUNDLICHEN GRÜSSEN — ELLA BRUNSCHÖN (Tech- & Sales-Pionierin)
+            </div>
+        </div>
+
+        <footer>
+            <p>Pitch-Webseite für VILSA-BRUNNEN Otto Rodekohr GmbH & Co. KG | Design & Konzept: Ella Brunschön</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
