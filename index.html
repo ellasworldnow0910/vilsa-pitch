@@ -38,10 +38,10 @@
             min-height: 100vh;
         }
 
-        /* Header Navigation / Banner */
+        /* Standard-Header (Chrome, Firefox, Edge, Opera) */
         header {
             background: rgba(11, 25, 44, 0.80);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -50,6 +50,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        /* Exklusiver Safari & iOS Fix (wird NUR von Safari geladen) */
+        @supports (-webkit-backdrop-filter: none) {
+            header {
+                background: rgba(11, 25, 44, 0.85);
+                -webkit-backdrop-filter: blur(16px);
+            }
         }
 
         .brand-logo {
@@ -467,9 +475,7 @@
             text-decoration: none;
         }
 
-        /* ========================================================
-           RESPONSIVE OPTIMIERUNG FÜR SMARTPHONES (Z.B. IPHONE)
-           ======================================================== */
+        /* Responsive Optimierung für Smartphones */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -507,14 +513,13 @@
                 min-width: 100%;
             }
 
-            /* Tabellen-Fix für Smartphone */
             .table-wrapper {
                 overflow-x: auto;
-                -webkit-overflow-scrolling: touch; /* Flüssiges Touch-Scrollen auf iOS */
+                -webkit-overflow-scrolling: touch;
             }
 
             table {
-                min-width: 650px; /* Garantiert sauberes Layout beim seitlichen Wischen */
+                min-width: 650px;
             }
 
             th, td {
