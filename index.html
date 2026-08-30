@@ -23,6 +23,35 @@
             --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
 
+        /* Lesefortschrittsbalken (Grün) */
+        .p-scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 1000;
+            appearance: none;
+            -webkit-appearance: none;
+            border: none;
+            background: transparent;
+        }
+
+        /* Safari / Chrome / Edge / Opera */
+        .p-scroll-indicator::-webkit-progress-bar {
+            background: transparent;
+        }
+        .p-scroll-indicator::-webkit-progress-value {
+            background: var(--cyan-accent);
+            box-shadow: 0 0 10px var(--cyan-accent);
+        }
+
+        /* Firefox */
+        .p-scroll-indicator::-moz-progress-bar {
+            background: var(--cyan-accent);
+            box-shadow: 0 0 10px var(--cyan-accent);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -544,6 +573,9 @@
 </head>
 <body>
 
+    <!-- Fortschrittsbalken -->
+    <progress id="vilsaScrollIndicator" class="p-scroll-indicator" value="0" max="1"></progress>
+
     <header>
         <div class="brand-logo">
             ELLA BRUNSCHÖN <span>/ VILSA PITCH</span>
@@ -758,5 +790,14 @@
 
     </div>
 
+    <!-- Script für den Scroll-Fortschrittsbalken -->
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var progress = scrollHeight > 0 ? (scrollTop / scrollHeight) : 0;
+            document.getElementById('vilsaScrollIndicator').value = progress;
+        });
+    </script>
 </body>
 </html>
